@@ -10,7 +10,13 @@ export class Badges extends React.Component {
     return (
       <View>
         <View style={styles.container}>
-          <Text style={styles.header}>Achievements</Text>
+
+          <Text style={styles.header}> <MaterialCommunityIcons
+                name='medal'
+                style={styles.icon}
+                size={30}
+
+              />Achievements</Text>
         </View>
         <View style={styles.container}>
 
@@ -65,8 +71,9 @@ export class Badges extends React.Component {
 const styles = StyleSheet.create({
   header: {
     fontSize: 30,
-    color: Colors.orange,
-    margin: 20,
+    //color: Colors.orange,
+    margin: 5,
+    color: 'rgba(96,100,109, 1)',
   },
   container: {
     display: 'flex',
@@ -75,24 +82,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   icon: {
-    color: Colors.orange,
+    //color: Colors.orange,
     textAlign: 'center',
+    color: 'rgba(96,100,109, 1)',
   },
   text: {
     fontSize: 15,
-    color: Colors.orange,
+    //color: Colors.orange,
     lineHeight: 20,
     textAlign: 'center',
+    color: 'rgba(96,100,109, 1)',
   },
   circle: {
+    borderColor: 'rgba(96,100,109, 1)',
     width: 80,
     height: 80,
     borderRadius: 100/2,
-    borderColor: Colors.orange,
+    //borderColor: Colors.orange,
     borderWidth: 2,
     textAlign: 'center',
     display: 'flex',
     justifyContent: 'center',
     margin: 10,
+    color: 'rgba(96,100,109, 1)',
   },
 });

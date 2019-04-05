@@ -4,10 +4,11 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
+import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Colors from '../constants/Colors';
 
 class Ratio extends React.Component {
     render () {
@@ -57,7 +58,7 @@ export default class HouseholdComponent extends React.Component {
                 <Ratio text="Health" ratio={0.52} />
                 <Ratio text="Food" ratio={0.2} />
             </View>
-            {<Button title="Improve" onPress={this.onClickImprove}/>}
+            {<Button title="Improve" onPress={this.onClickImprove} color={Colors.green} buttonStyle={styles.button}/>}
             <View style={{marginLeft: 30}}>
             {/*this.renderWarnings()*/}
             </View>
@@ -70,6 +71,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  button: {
+    margin: 10,
   },
   developmentModeText: {
     marginBottom: 20,
