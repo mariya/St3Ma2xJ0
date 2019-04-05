@@ -16,6 +16,8 @@ import { MonoText } from '../components/StyledText';
 import { Header } from '../components/Header';
 import { Badges } from '../components/Badges';
 
+
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
