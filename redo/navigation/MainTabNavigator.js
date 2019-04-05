@@ -5,23 +5,24 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import NeighborhoodScreen from '../screens/SettingsScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Colors from '../constants/Colors';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Dashboard',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
+    <FontAwesome
+        name='dashboard'
+        size={26}
+        style={{ marginBottom: -3 }}
+        color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+      />
   ),
 };
 
@@ -39,22 +40,24 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const NeighborhoodStack = createStackNavigator({
+  Neighborhood: NeighborhoodScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+NeighborhoodStack.navigationOptions = {
+  tabBarLabel: 'Neighborhood',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
+    <MaterialCommunityIcons
+        name='city'
+        size={26}
+        style={{ marginBottom: -3 }}
+        color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+      />
   ),
 };
 
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
+  NeighborhoodStack,
 });
