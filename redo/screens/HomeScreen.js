@@ -13,6 +13,7 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 import { Header } from '../components/Header';
+import { Badges } from '../components/Badges';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -54,6 +55,8 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
+
+          <Badges></Badges>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
