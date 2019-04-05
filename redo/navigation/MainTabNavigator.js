@@ -5,7 +5,6 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import HouseholdScreen from '../screens/HouseholdScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import NeighborhoodScreen from '../screens/SettingsScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -60,6 +59,5 @@ NeighborhoodStack.navigationOptions = {
 export default createBottomTabNavigator({
   HomeStack,
   HouseholdStack,
-  SettingsStack,
   NeighborhoodStack,
 });
