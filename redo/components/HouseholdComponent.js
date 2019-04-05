@@ -4,8 +4,10 @@ import {
   StyleSheet,
   Text,
   View,
+  Button,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Ratio extends React.Component {
     render () {
@@ -25,12 +27,38 @@ class Ratio extends React.Component {
 }
 
 export default class HouseholdComponent extends React.Component {
-  render() {
+    onClickImprove() {
+
+    }
+
+  renderWarnings() {
       return (
-        <View style={{margin: 20,  flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Ratio text="Overall" ratio={0.3} />
-            <Ratio text="Health" ratio={0.52} />
-            <Ratio text="Food" ratio={0.2} />
+          <View>
+            <Text style={styles.warningText}>
+                <Icon name="exclamation-triangle"/> Replace your potatoes 
+            </Text>
+            <Text style={styles.warningText}>
+                <Icon name="exclamation-triangle"/> Save your toenails
+            </Text>
+        </View>
+      );
+  }
+
+  render() {
+    return (
+        <View>
+            <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
+                <Text style={styles.headerText}>Your household</Text>
+            </View>
+            <View style={{margin: 20,  flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Ratio text="Overall" ratio={0.3} />
+                <Ratio text="Health" ratio={0.52} />
+                <Ratio text="Food" ratio={0.2} />
+            </View>
+            <Button title="Improve" onPress={this.onClickImprove}/>
+            <View style={{marginLeft: 30}}>
+            {this.renderWarnings()}
+            </View>
         </View>
     );
   }
@@ -106,6 +134,15 @@ const styles = StyleSheet.create({
   },
   tabBarInfoText: {
     fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    textAlign: 'center',
+  },
+  warningText: {
+    fontSize: 20,
+    color: 'rgba(96,100,109, 1)',
+  },
+  headerText: {
+    fontSize: 30,
     color: 'rgba(96,100,109, 1)',
     textAlign: 'center',
   },
