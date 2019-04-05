@@ -13,6 +13,9 @@ import HouseholdComponent from '../components/HouseholdComponent';
 
 import { MonoText } from '../components/StyledText';
 
+import { Header } from '../components/Header';
+import { Badges } from '../components/Badges';
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -23,6 +26,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
+            <Header></Header>
             <Image
               source={
                 __DEV__
@@ -53,6 +57,8 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
+
+          <Badges></Badges>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
