@@ -35,7 +35,7 @@ export default class HouseholdComponent extends React.Component {
       return (
           <View>
             <Text style={styles.warningText}>
-                <Icon name="exclamation-triangle"/> Replace your potatoes 
+                <Icon name="exclamation-triangle"/> Replace your potatoes
             </Text>
             <Text style={styles.warningText}>
                 <Icon name="exclamation-triangle"/> Save your toenails
@@ -49,7 +49,7 @@ export default class HouseholdComponent extends React.Component {
         <View>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
                 <Text style={styles.headerText}>
-                    <Icon size={30} name={this.props.logo} /> {this.props.header}
+                    {this.props.logo} {this.props.header}
                 </Text>
             </View>
             <View style={{margin: 20,  flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>

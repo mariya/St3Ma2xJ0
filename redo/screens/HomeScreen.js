@@ -15,8 +15,18 @@ import { MonoText } from '../components/StyledText';
 
 import { Header } from '../components/Header';
 import { Badges } from '../components/Badges';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Icon } from 'expo';
 
+const neighborhoodLogo = (<MaterialCommunityIcons
+        name='city'
+        size={30}
+      />);
 
+const householdLogo = (<Icon.Ionicons
+        name='md-home'
+        size={30}
+      />);
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -24,14 +34,15 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Header></Header>
           </View>
-          <HouseholdComponent header="Your household" logo="home" />
-          <HouseholdComponent header="Your neighborhood" logo="project-diagram" />
+          <HouseholdComponent header="Your household" logo={householdLogo} />
+          <HouseholdComponent header="Your neighborhood" logo={neighborhoodLogo} />
           <Badges></Badges>
         </ScrollView>
       </View>
