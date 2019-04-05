@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import HouseholdComponent from '../components/HouseholdComponent';
 
 import { MonoText } from '../components/StyledText';
 
@@ -31,6 +32,7 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
+          <HouseholdComponent />
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
