@@ -5,6 +5,9 @@ import {Component} from 'react';
 import {Text, View} from 'react-native';
 import * as Progress from 'react-native-progress';
 
+function formatText(p) {
+  return "30%";  // Why is p == 0?
+}
 
 class PrepComponent extends Component {
   render() {
@@ -17,7 +20,9 @@ class PrepComponent extends Component {
           Instead of 'div' and 'span', you'll use native components
           like 'View' and 'Text'.
         </Text>
-        <Progress.Circle size={70} endAngle={0.9} showsText={true} />
+        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
+          <Progress.Circle progress={0.3} size={70} showsText={true} formatText={formatText} />
+        </View>
         <Text>
           If you like React, you'll also like React Native.
         </Text>
