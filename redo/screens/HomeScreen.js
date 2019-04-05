@@ -12,6 +12,8 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+import { Header } from '../components/Header';
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -22,6 +24,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
+            <Header></Header>
             <Image
               source={
                 __DEV__
