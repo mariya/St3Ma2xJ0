@@ -28,10 +28,10 @@ export default class HomeScreen extends React.Component {
           <View style={styles.welcomeContainer}>
             <Header></Header>
           </View>
-          <HouseholdComponent />
+          <HouseholdComponent header="Your household" logo="home" />
+          <HouseholdComponent header="Your neighborhood" logo="project-diagram" />
           <Badges></Badges>
         </ScrollView>
-
       </View>
     );
   }

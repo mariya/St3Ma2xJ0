@@ -48,16 +48,18 @@ export default class HouseholdComponent extends React.Component {
     return (
         <View>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-                <Text style={styles.headerText}>Your household</Text>
+                <Text style={styles.headerText}>
+                    <Icon size={30} name={this.props.logo} /> {this.props.header}
+                </Text>
             </View>
             <View style={{margin: 20,  flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
                 <Ratio text="Overall" ratio={0.3} />
                 <Ratio text="Health" ratio={0.52} />
                 <Ratio text="Food" ratio={0.2} />
             </View>
-            <Button title="Improve" onPress={this.onClickImprove}/>
+            {<Button title="Improve" onPress={this.onClickImprove}/>}
             <View style={{marginLeft: 30}}>
-            {this.renderWarnings()}
+            {/*this.renderWarnings()*/}
             </View>
         </View>
     );
